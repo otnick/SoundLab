@@ -1,6 +1,4 @@
-// ============================================================
-//  Central singleton. Bootstraps all four systems.
-// ============================================================
+// controlls all other controllers
 using UnityEngine;
 using SoundLab.VR;
 using SoundLab.UI;
