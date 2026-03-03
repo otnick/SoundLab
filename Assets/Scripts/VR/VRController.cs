@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 namespace SoundLab.VR
 {
     public class VRController : MonoBehaviour
     {
-        [SerializeField] private XRDirectInteractor _left;
-        [SerializeField] private XRDirectInteractor _right;
+        [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor _left;
+        [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor _right;
 
         // Other systems subscribe to these instead of XR events directly maybe? Could be useful for morph and stuff later
         public event Action<GameObject> OnGrabbed;
