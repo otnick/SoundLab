@@ -30,12 +30,10 @@ namespace SoundLab.Core
 
         private void Start()
         {
-            _tangible.Connect();
         }
 
         private void OnDestroy()
         {
-            _tangible.Disconnect();
         }
     }
 }
