@@ -1,8 +1,6 @@
-// ============================================================
 //  Async scene switching with a simple fade.
 //  Setup: assign a full-screen black CanvasGroup as _fadeOverlay.
 //  Scene build order: 0 = Title, 1 = Lab
-// ============================================================
 using System;
 using System.Collections;
 using UnityEngine;
