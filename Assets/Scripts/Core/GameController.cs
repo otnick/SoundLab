@@ -15,11 +15,13 @@ namespace SoundLab.Core
         [SerializeField] private VRController _vr;
         [SerializeField] private UIController _ui;
         [SerializeField] private TangibleController _tangible;
+        [SerializeField] private SpawnController _spawn;
 
         public SceneController Scenes => _scenes;
         public VRController VR => _vr;
         public UIController UI => _ui;
         public TangibleController Tangible => _tangible;
+        public SpawnController Spawn => _spawn;
 
         private void Awake()
         {
