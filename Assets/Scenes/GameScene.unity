@@ -12211,8 +12211,8 @@ MonoBehaviour:
   m_PermittedDisplacementAxes: -1
   m_ConstrainedAxisDisplacementMode: 1
   m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 0
+  m_AllowOneHandedScaling: 0
+  m_AllowTwoHandedScaling: 1
   m_OneHandedScaleSpeed: 0.5
   m_ThresholdMoveRatioForScale: 0.05
   m_ClampScaling: 1
@@ -18013,6 +18013,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReverbEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 8076137646941412200, guid: 15c062e0dd3084ec6bd389feb2e902bb, type: 3}
+      propertyPath: m_AllowOneHandedScaling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076137646941412200, guid: 15c062e0dd3084ec6bd389feb2e902bb, type: 3}
+      propertyPath: m_AllowTwoHandedScaling
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18923,14 +18931,6 @@ PrefabInstance:
     - target: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_Name
       value: XR Origin Hands (XR Rig)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942156198692655549, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359434741994886739, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19973,13 +19973,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861779573}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.8, y: 0.53, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2.02, y: 2.02, z: 2.02}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 223829773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!135 &1861779575
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20057,7 +20057,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861779573}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 1865056248366311061, guid: be2911572dc3afa448d24b4e97edc5f1, type: 3}
 --- !u!1 &1935179931
 GameObject:
   m_ObjectHideFlags: 0
