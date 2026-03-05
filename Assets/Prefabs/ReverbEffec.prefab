@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 973206286510408579}
   - component: {fileID: 1542390685590686683}
   - component: {fileID: 1634405242126821093}
-  - component: {fileID: -5526052597597373043}
+  - component: {fileID: -687732213732323128}
   m_Layer: 0
-  m_Name: EQEffect
+  m_Name: ReverbEffec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.345
   m_MaximumScaleRatio: 10
   m_ScaleMultiplier: 5
---- !u!114 &-5526052597597373043
+--- !u!114 &-687732213732323128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,12 +226,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125399109092268711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0fb11c67ee7470c9fe4273885a0d5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22b0ef38ab9664bf5a59b193a22ebeb7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EQEffect
+  m_EditorClassIdentifier: Assembly-CSharp::ReverbEffect
   soundObject: {fileID: 0}
   rotationSpeed: 25
-  scaleCoefficient: 400
+  scaleCoefficient: 1
+  reflectionsLevel: 100
+  decayTime: 10
+  dryLevel: 1
 --- !u!1 &3183935679896716588
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +555,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9cc7527e5281d4478f5c6f85b73af1d, type: 2}
+  - {fileID: 2100000, guid: ea3aac6a3544a314f86d21e6281c30c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

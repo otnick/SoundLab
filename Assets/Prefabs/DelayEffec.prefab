@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 973206286510408579}
   - component: {fileID: 1542390685590686683}
   - component: {fileID: 1634405242126821093}
-  - component: {fileID: -5526052597597373043}
+  - component: {fileID: 8537019287495784231}
   m_Layer: 0
-  m_Name: EQEffect
+  m_Name: DelayEffec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,10 +130,34 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537019287495784231}
+        m_TargetAssemblyTypeName: DelayEffect, Assembly-CSharp
+        m_MethodName: setActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537019287495784231}
+        m_TargetAssemblyTypeName: DelayEffect, Assembly-CSharp
+        m_MethodName: setActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
@@ -217,7 +241,7 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.345
   m_MaximumScaleRatio: 10
   m_ScaleMultiplier: 5
---- !u!114 &-5526052597597373043
+--- !u!114 &8537019287495784231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,12 +250,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125399109092268711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0fb11c67ee7470c9fe4273885a0d5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 95fdd116348634266a10811f27fba04a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EQEffect
+  m_EditorClassIdentifier: Assembly-CSharp::DelayEffect
   soundObject: {fileID: 0}
   rotationSpeed: 25
-  scaleCoefficient: 400
+  delayTime: 500
+  decayRatio: 0.5
+  wetMix: 0
 --- !u!1 &3183935679896716588
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,8 +486,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3672658662900150558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -552,7 +578,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9cc7527e5281d4478f5c6f85b73af1d, type: 2}
+  - {fileID: 2100000, guid: a21b7da9222937b4585f641732292c9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
