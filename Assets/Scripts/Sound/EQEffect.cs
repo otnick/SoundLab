@@ -15,6 +15,7 @@ public class EQEffect : IEffects
 
     public override void setWet(float wetness)
     {
+        Debug.Log("local scale = " + transform.localScale.x);
         // Normalize the scale: 0.5 scale = 0 (Dry), 1.5 scale = 1 (Full Wet)
         float normalizedWetness = Mathf.InverseLerp(0.5f, 1.5f, wetness);
         

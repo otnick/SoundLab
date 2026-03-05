@@ -28,7 +28,7 @@ abstract public class IEffects: MonoBehaviour
     {
         if (transform.localScale.x != oldscale)
         setWet(transform.localScale.x);
-        // Debug.Log("local scale = " + transform.localScale.x);
+         
         // Debug.Log("old scale = " + oldscale);
         oldscale = transform.localScale.x;
         // get direction to sound object
