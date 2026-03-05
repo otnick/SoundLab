@@ -1,2 +1,2 @@
-# team10
+# SoundLab - Team10
 
