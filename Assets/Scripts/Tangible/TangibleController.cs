@@ -2,6 +2,7 @@ using UnityEngine;
 using NativeWebSocket;
 using System;
 using System.Threading.Tasks;
+using SoundLab.Core;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -169,22 +170,17 @@ namespace SoundLab.Tangible
 
             string valueParsed = msg.Substring(msg.IndexOf(":") + 1);
 
-            if (msg.Contains("button"))
+            if (msg.Contains("force_plate1"))
             {
-                if (valueParsed == "1")
-                {
-                    Debug.Log("ESP32 Button Pressed");
+                float receivedValue = float.Parse(valueParsed);
+            }
+        }
 
-                    if (Sun) Sun.GetComponent<Light>().intensity = 0;
-                    if (FrontLight) FrontLight.GetComponent<Light>().intensity = 50f;
-                }
-                else if (valueParsed == "0")
-                {
-                    Debug.Log("ESP32 Button Released");
-
-                    if (Sun) Sun.GetComponent<Light>().intensity = 33f;
-                    if (FrontLight) FrontLight.GetComponent<Light>().intensity = 0;
-                }
+        public void forcePlateMessage(float value)
+        {
+            foreach (AudioController audio in GameController.Instance.Audio)
+            {
+                audio.BendNote(value);
             }
         }
 

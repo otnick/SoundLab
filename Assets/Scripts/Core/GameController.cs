@@ -3,6 +3,7 @@ using UnityEngine;
 using SoundLab.VR;
 using SoundLab.UI;
 using SoundLab.Tangible;
+using System.Collections.Generic;
 
 namespace SoundLab.Core
 {
@@ -16,12 +17,14 @@ namespace SoundLab.Core
         [SerializeField] private UIController _ui;
         [SerializeField] private TangibleController _tangible;
         [SerializeField] private SpawnController _spawn;
+        [SerializeField] private List<AudioController> _audio;
 
         public SceneController Scenes => _scenes;
         public VRController VR => _vr;
         public UIController UI => _ui;
         public TangibleController Tangible => _tangible;
         public SpawnController Spawn => _spawn;
+        public List<AudioController> Audio => _audio;
 
         private void Awake()
         {

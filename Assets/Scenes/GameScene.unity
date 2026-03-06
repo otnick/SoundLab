@@ -11479,7 +11479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26fa3e0e0072f941951ca3bd9b91c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Tangible.TangibleController
-  serverIP: 10.204.0.49
+  serverIP: 10.204.0.62
   serverPort: 8081
   autoReconnect: 1
   reconnectDelay: 3
@@ -11595,7 +11595,7 @@ MonoBehaviour:
   _soundInstancePrefab: {fileID: 8940209594014729060, guid: 21052279ece934faa8b22b8ef5ca4c67, type: 3}
   _soundClips:
   - {fileID: 8300000, guid: d0faa407f3d9940e2803f0883f3ced07, type: 3}
-  - {fileID: 8300000, guid: 02bac9e8061c44a71bb81d81318797be, type: 3}
+  - {fileID: 8300000, guid: 3335e236644aa41489f1527d7a2854f7, type: 3}
   _spawnDistance: 1.5
 --- !u!4 &893132547
 Transform:
