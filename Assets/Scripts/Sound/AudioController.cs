@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        Debug.Log("AudioManager Start method says hi");
     }
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class AudioController : MonoBehaviour
 
     public void BendNote(float bendage)
     {
+        Debug.Log("bending note");
         audioSource.pitch = 1 + bendage;
     }
 }

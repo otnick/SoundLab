@@ -173,11 +173,13 @@ namespace SoundLab.Tangible
             if (msg.Contains("force_plate1"))
             {
                 float receivedValue = float.Parse(valueParsed);
+                forcePlateMessage(receivedValue);
             }
         }
 
         public void forcePlateMessage(float value)
         {
+            if (GameController.Instance.Audio.Count == 0) return;
             foreach (AudioController audio in GameController.Instance.Audio)
             {
                 audio.BendNote(value);

@@ -30,6 +30,7 @@ namespace SoundLab.Core
             SetEffectActive<DelayEffect>(root, delay);
             SetEffectActive<EQEffect>(root, eq);
             GameController.Instance.Audio.Add(audioController);
+            Debug.Log("Added AudioController");
         }
 
         private void SetEffectActive<T>(GameObject root, bool active) where T : IEffects
