@@ -10,6 +10,12 @@ using UnityEditor;
 
 namespace SoundLab.Tangible
 {
+    public struct TangibleMessage
+    {
+        public string type;
+        public string action;
+    }
+
     public class TangibleController : MonoBehaviour
     {
         public static TangibleController Instance;
@@ -33,6 +39,7 @@ namespace SoundLab.Tangible
 
         public event Action OnConnected;
         public event Action OnDisconnected;
+        public event Action<TangibleMessage> OnMessageReceived;
 
         private bool isConnecting = false;
 
@@ -168,12 +175,17 @@ namespace SoundLab.Tangible
         {
             if (!msg.Contains(":")) return;
 
-            string valueParsed = msg.Substring(msg.IndexOf(":") + 1);
+            string key         = msg.Substring(0, msg.IndexOf(":")).Trim();
+            string valueParsed = msg.Substring(msg.IndexOf(":") + 1).Trim();
 
-            if (msg.Contains("force_plate1"))
+            if (key == "force_plate1")
             {
                 float receivedValue = float.Parse(valueParsed);
                 forcePlateMessage(receivedValue);
+            }
+            else if (key == "sunrise")
+            {
+                OnMessageReceived?.Invoke(new TangibleMessage { type = "sunrise", action = valueParsed });
             }
         }
 
