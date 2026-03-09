@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 abstract public class IEffects: MonoBehaviour
 {
@@ -11,7 +12,7 @@ abstract public class IEffects: MonoBehaviour
     private float maxDistanceToParent = 5.0f;
     [SerializeField] private float lerpSpeed = 7.5f;
 
-    private bool active;
+    public bool active;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -20,6 +21,7 @@ abstract public class IEffects: MonoBehaviour
         oldscale = 0;
         //Get SoundObject
         // Effect will be child of sound Object
+        active = false;
         soundObject = transform.parent.gameObject;
         Init();
         int negativo = (Random.value < 0.5f) ? -1 : 1;
@@ -32,12 +34,20 @@ abstract public class IEffects: MonoBehaviour
     protected virtual void Update()
     {
         if (transform.localScale.x != oldscale)
-        setWet(transform.localScale.x);
-        // Debug.Log("local scale = " + transform.localScale.x);
-        // Debug.Log("old scale = " + oldscale);
-        oldscale = transform.localScale.x;
+        {
+            // when active for some reason scale is * 4.4
+            var value = this.active ? transform.localScale.x / 4.4f : transform.localScale.x;
+            Debug.Log("Object " + this.GetType().Name + "is active " + active + ": object value to wet = " +  value);
+            setWet(value);
+        }
 
-        if (active) return;
+
+    oldscale = transform.localScale.x;
+        if (active || 
+            this.GetType().Equals(typeof(InstrumentEQ))) return;
+
+        Debug.Log("this type is = " + this.GetType());
+
         // get direction to sound object
         Vector3 distance = (soundObject.transform.position - transform.position).normalized;
         //get perpendicular vector between direction and forward in order for the rotateAround to rotate in this direction.
@@ -78,5 +88,6 @@ abstract public class IEffects: MonoBehaviour
     public void setActive(bool active)
     {
         this.active = active;
+        Debug.Log("object active = " + soundObject.name);
     }
 }
