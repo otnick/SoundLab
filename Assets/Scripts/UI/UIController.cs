@@ -15,17 +15,11 @@ namespace SoundLab.UI
         [Header("Lab")]
         [SerializeField] private Button _backToTitleBtn;
 
-        //Spawn Panel
-        [Header("Spawn Panel")]
-        [SerializeField] private GameObject _spawnPanel;
-
         private void Start()
         {
             if (_enterLabBtn)  _enterLabBtn.onClick.AddListener(OnEnterLab);
             if (_quitBtn)      _quitBtn.onClick.AddListener(OnQuit);
             if (_backToTitleBtn) _backToTitleBtn.onClick.AddListener(OnBackToTitle);
-            
-            if (_spawnPanel) _spawnPanel.SetActive(true);
         }
 
         // switches scenes
