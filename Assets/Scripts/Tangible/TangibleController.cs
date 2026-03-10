@@ -28,10 +28,6 @@ namespace SoundLab.Tangible
         public bool autoReconnect = true;
         public float reconnectDelay = 3f;
 
-        [Header("Lights")]
-        public GameObject Sun;
-        public GameObject FrontLight;
-
         [Range(0, 255)]
         public int ledIntensity = 0;
 
@@ -186,6 +182,10 @@ namespace SoundLab.Tangible
             else if (key == "sunrise")
             {
                 OnMessageReceived?.Invoke(new TangibleMessage { type = "sunrise", action = valueParsed });
+
+                if (valueParsed == "rise") TriggerSunrise();
+                else if (valueParsed == "set") TriggerSunset();
+                else if (valueParsed == "reset") ResetSunrise();
             }
         }
 
@@ -196,6 +196,21 @@ namespace SoundLab.Tangible
             {
                 audio.BendNote(value);
             }
+        }
+
+        public void TriggerSunrise()
+        {
+            OnMessageReceived?.Invoke(new TangibleMessage { type = "sunrise", action = "start" });
+        }
+
+        public void TriggerSunset()
+        {
+            OnMessageReceived?.Invoke(new TangibleMessage { type = "sunrise", action = "sunset" });
+        }
+
+        public void ResetSunrise()
+        {
+            OnMessageReceived?.Invoke(new TangibleMessage { type = "sunrise", action = "reset" });
         }
 
         #endregion
