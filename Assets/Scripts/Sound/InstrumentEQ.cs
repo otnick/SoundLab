@@ -12,10 +12,12 @@ public class InstrumentEQ : IEffects
 
     public override void Init()
     {
+        soundObject = this.gameObject;
         _lowpassFilter = soundObject.GetComponent<AudioLowPassFilter>();
         _lowpassFilter.enabled = true;
         _highpassFilter = soundObject.GetComponent<AudioHighPassFilter>();
         _highpassFilter.enabled = false;
+        
     }
 
     public override void setWet(float wetness)
