@@ -12,7 +12,7 @@
     },
     "com.unity.collections": {
       "version": "2.6.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.23",
@@ -76,6 +76,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.jobs": {
+      "version": "0.50.0-preview.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.6.4",
+        "com.unity.collections": "1.2.3",
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.nuget.mono-cecil": "1.10.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.learn.iet-framework": {
       "version": "5.0.2",
       "depth": 0,
@@ -103,7 +115,7 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -194,7 +206,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.2.0",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",
@@ -231,6 +243,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "17.3.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "17.3.0",
+        "com.unity.render-pipelines.core": "17.3.0"
       }
     },
     "com.unity.xr.androidxr-openxr": {
@@ -342,6 +363,32 @@
       "source": "git",
       "dependencies": {},
       "hash": "ea731a6d7ab6d8867344266a97dfcad36c162633"
+    },
+    "voxell.audio": {
+      "version": "https://github.com/nixonyh/UnityAudioVisualizer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.visualeffectgraph": "10.3.2",
+        "com.unity.collections": "1.0.0-pre.5",
+        "com.unity.jobs": "0.11.0-preview.6",
+        "com.unity.burst": "1.5.5",
+        "voxell.util": "1.4.3"
+      },
+      "hash": "4cf5935c20cd5f5cfaecd8ae6cd70e4fa784bb33"
+    },
+    "voxell.util": {
+      "version": "https://github.com/nixonyh/UnityUtil.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.6",
+        "com.unity.collections": "1.2.3",
+        "com.unity.jobs": "0.50.0-preview.9",
+        "com.unity.burst": "1.6.5",
+        "com.unity.test-framework": "1.1.30"
+      },
+      "hash": "a3397bbd88f8e0d3ff2214b8c4419ea4c1a787bf"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
