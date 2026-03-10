@@ -191,11 +191,8 @@ namespace SoundLab.Tangible
 
         public void forcePlateMessage(float value)
         {
-            if (GameController.Instance.Audio.Count == 0) return;
-            foreach (AudioController audio in GameController.Instance.Audio)
-            {
-                audio.BendNote(value);
-            }
+            if (GameController.Instance.Instrument != null)
+            GameController.Instance.Instrument.BendNote(value);
         }
 
         public void TriggerSunrise()

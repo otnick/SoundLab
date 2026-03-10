@@ -1,4 +1,8 @@
 using UnityEngine;
+using System.Collections.Generic;
+using SoundLab.Core;
+
+namespace SoundLab.Sound{
 
 public class AudioController : MonoBehaviour
 {
@@ -6,9 +10,9 @@ public class AudioController : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {   
+
         audioSource = gameObject.GetComponent<AudioSource>();
-        Debug.Log("AudioManager Start method says hi");
     }
 
     // Update is called once per frame
@@ -19,7 +23,7 @@ public class AudioController : MonoBehaviour
 
     public void BendNote(float bendage)
     {
-        Debug.Log("bending note");
         audioSource.pitch = 1 + bendage;
     }
+}
 }
