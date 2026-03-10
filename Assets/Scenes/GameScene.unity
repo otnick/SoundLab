@@ -16490,7 +16490,7 @@ MonoBehaviour:
   _ui: {fileID: 358255789}
   _tangible: {fileID: 771456573}
   _spawn: {fileID: 893132546}
-  _audio: []
+  _instrument: {fileID: 0}
 --- !u!4 &735335625
 Transform:
   m_ObjectHideFlags: 0
@@ -24127,11 +24127,11 @@ MonoBehaviour:
   _corona3: {fileID: 1514426368}
   _godRays: {fileID: 654041319}
   _sunLight: {fileID: 168588184}
-  _maxLightIntensity: 1.2
+  _maxLightIntensity: 10
   _skyboxMaterial: {fileID: 2100000, guid: fab86d6e3aac31b4ba387cf650a655b8, type: 2}
   _duration: 30
-  _startAngle: 200
-  _endAngle: 140
+  _startAngle: 0
+  _endAngle: -90
   _startDistance: 60
   _endDistance: 20
   _skyNight: {r: 0.02, g: 0.02, b: 0.05, a: 1}
