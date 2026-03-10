@@ -19,7 +19,7 @@ namespace SoundLab.Core
             GameObject root = Instantiate(_soundInstancePrefab, pos, Quaternion.identity);
 
             AudioSource audio = root.GetComponentInChildren<AudioSource>(true);
-            AudioController audioController = root.GetComponentInChildren<AudioController>(true);
+            // AudioController audioController = root.GetComponentInChildren<AudioController>(true);
             if (audio != null && soundIndex < _soundClips.Length)
             {
                 audio.clip = _soundClips[soundIndex];
@@ -29,8 +29,8 @@ namespace SoundLab.Core
             SetEffectActive<ReverbEffect>(root, reverb);
             SetEffectActive<DelayEffect>(root, delay);
             SetEffectActive<EQEffect>(root, eq);
-            GameController.Instance.Audio.Add(audioController);
-            Debug.Log("Added AudioController");
+            // GameController.Instance.Audio.Add(audioController);
+            // Debug.Log("Added AudioController");
         }
 
         private void SetEffectActive<T>(GameObject root, bool active) where T : IEffects
