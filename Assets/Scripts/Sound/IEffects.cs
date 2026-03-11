@@ -11,7 +11,7 @@ abstract public class IEffects: MonoBehaviour
 
     private float maxDistanceToParent = 1.5f;
     private float lerpSpeed = 0.7f;
-
+    float randomScaleCoef = 2.27272727f;
     public bool active;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,10 +22,12 @@ abstract public class IEffects: MonoBehaviour
         //Get SoundObject
         // Effect will be child of sound Object
         active = false;
-        soundObject = transform.parent.gameObject;
+        if (transform.parent != null)
+            soundObject = transform.parent.gameObject;
         Init();
         int negativo = (Random.value < 0.5f) ? -1 : 1;
         rotationSpeed *= negativo;
+        
 
         
     }
@@ -36,7 +38,8 @@ abstract public class IEffects: MonoBehaviour
         if (transform.localScale.x != oldscale)
         {
             // when active for some reason scale is * 4.4
-            var value = this.active ? transform.localScale.x / 4.4f : transform.localScale.x;
+           // var value = this.active ? transform.localScale.x * randomScaleCoef : transform.localScale.x;
+            var value = transform.localScale.x;
             Debug.Log("Object " + this.GetType().Name + "is active " + active + ": object value to wet = " +  value);
             setWet(value);
         }
