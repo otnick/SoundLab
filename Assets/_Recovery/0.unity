@@ -770,11 +770,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a991717e9f9848f68ebb3eae1f8ad92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
-  _clip: {fileID: 8300000, guid: 06e592430cb144a368b1c50c9ecb778f, type: 3}
-  _defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  _activeColor: {r: 0, g: 0.4745098, b: 1, a: 0.29803923}
+  _clip: {fileID: 8300000, guid: 3335e236644aa41489f1527d7a2854f7, type: 3}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _activeColor: {r: 1, g: 0.94274926, b: 0, a: 1}
   _hapticAmplitude: 0.5
-  _rotationSpeed: 50
+  _rotationSpeed: 700
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!82 &67726203
 AudioSource:
@@ -966,8 +966,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.950676, y: 1.7507054, z: 1.617284}
-  m_Center: {x: -0.058759123, y: 0.07726383, z: 0.10686374}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &67726206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -993,7 +993,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59651f7bf5da64536a7c80df29815277, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1024,7 +1024,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67726201}
-  m_Mesh: {fileID: 289301614986012343, guid: 8eac8a7a1ac0ba3428ddb098e5ab5c4d, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &67726208
 Transform:
   m_ObjectHideFlags: 0
@@ -1034,7 +1034,7 @@ Transform:
   m_GameObject: {fileID: 67726201}
   serializedVersion: 2
   m_LocalRotation: {x: 0.044943534, y: -0.25488704, z: 0.16773152, w: -0.9512512}
-  m_LocalPosition: {x: 2.39, y: 2.45, z: -0.48}
+  m_LocalPosition: {x: 1.61, y: 2.188, z: -0.029}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12542,11 +12542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a991717e9f9848f68ebb3eae1f8ad92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
-  _clip: {fileID: 8300000, guid: 556d3144ccf1b456895bc997c95b472b, type: 3}
+  _clip: {fileID: 8300000, guid: 6561bf801c4844df8b6ffd21e4470364, type: 3}
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _activeColor: {r: 0.8862745, g: 0, b: 0.6509804, a: 1}
+  _activeColor: {r: 1, g: 0.94274926, b: 0, a: 1}
   _hapticAmplitude: 0.5
-  _rotationSpeed: 50
+  _rotationSpeed: 700
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!82 &1109805174
 AudioSource:
@@ -12738,8 +12738,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5206194, y: 1.6035528, z: 1.5010065}
-  m_Center: {x: -0.015159368, y: 0.12524128, z: 0.04241723}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1109805177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12765,7 +12765,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59651f7bf5da64536a7c80df29815277, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12796,7 +12796,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109805172}
-  m_Mesh: {fileID: 289301614986012343, guid: 8eac8a7a1ac0ba3428ddb098e5ab5c4d, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1109805179
 Transform:
   m_ObjectHideFlags: 0
@@ -12805,13 +12805,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109805172}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.059391256, y: -0.336824, z: 0.16317618, w: -0.9254165}
-  m_LocalPosition: {x: 2.43, y: 1.801, z: 3.05}
+  m_LocalRotation: {x: 0.015134467, y: -0.08583168, z: 0.17298765, w: -0.9810602}
+  m_LocalPosition: {x: -0.011, y: 2.094, z: -0.717}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 340}
+  m_LocalEulerAnglesHint: {x: 0, y: 10, z: 340}
 --- !u!1 &1153019977
 GameObject:
   m_ObjectHideFlags: 0
@@ -18929,7 +18929,7 @@ GameObject:
   - component: {fileID: 1543017260}
   - component: {fileID: 1543017259}
   m_Layer: 0
-  m_Name: SoundDisco
+  m_Name: SkyObjectSound (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18949,9 +18949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
   _clip: {fileID: 8300000, guid: cc8c16fab5ab34a8d974ba57e9098594, type: 3}
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _activeColor: {r: 0, g: 1, b: 0.96936965, a: 0.23921569}
+  _activeColor: {r: 1, g: 0.94274926, b: 0, a: 1}
   _hapticAmplitude: 0.5
-  _rotationSpeed: 50
+  _rotationSpeed: 700
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!82 &1543017260
 AudioSource:
@@ -19143,8 +19143,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8964862, y: 1.9315324, z: 1.7317462}
-  m_Center: {x: -0.016373023, y: 0.017448962, z: 0.0072847307}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1543017263
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19170,7 +19170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59651f7bf5da64536a7c80df29815277, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19201,7 +19201,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543017258}
-  m_Mesh: {fileID: 289301614986012343, guid: 8eac8a7a1ac0ba3428ddb098e5ab5c4d, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1543017265
 Transform:
   m_ObjectHideFlags: 0
@@ -19212,7 +19212,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.044943534, y: -0.25488704, z: 0.16773152, w: -0.9512512}
   m_LocalPosition: {x: -1.238, y: 2.316, z: 0.372}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19360,71 +19360,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1652456402
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1652456403}
-  - component: {fileID: 1652456404}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1652456403
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652456402}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.0000000037252899, w: 1}
-  m_LocalPosition: {x: 1.61, y: 2.188, z: -0.029}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!215 &1652456404
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652456402}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 1
-  m_RefreshMode: 1
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
 --- !u!43 &1675579228
 Mesh:
   m_ObjectHideFlags: 0
@@ -20532,7 +20467,6 @@ SceneRoots:
   - {fileID: 1444769657}
   - {fileID: 5106076809342533334}
   - {fileID: 28549179}
-  - {fileID: 1652456403}
   - {fileID: 67726208}
   - {fileID: 1109805179}
   - {fileID: 1543017265}

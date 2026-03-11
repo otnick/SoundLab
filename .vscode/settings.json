@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "SoundLab.slnx"
+    "dotnet.defaultSolution": "team10.slnx"
 }
