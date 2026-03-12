@@ -99,7 +99,7 @@ namespace SoundLab.Tangible
             websocket.OnMessage += (bytes) =>
             {
                 string message = System.Text.Encoding.UTF8.GetString(bytes);
-                Debug.Log("Received: " + message);
+                //Debug.Log("Received: " + message);
                 IncomingMessageParser(message);
             };
 
