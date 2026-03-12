@@ -6,31 +6,31 @@ namespace SoundLab.UI
 {
     public class UIController : MonoBehaviour
     {
-        // Title Scene 
-        [Header("Title")]
+        [Header("UI Panels")]
+        [SerializeField] private GameObject _titleOverlayPanel;
+
+        [Header("Title Buttons")]
         [SerializeField] private Button _enterLabBtn;
-        [SerializeField] private Button _quitBtn;
-
-        //Lab Scene
-        [Header("Lab")]
-        [SerializeField] private Button _backToTitleBtn;
-
-        //Spawn Panel
-        [Header("Spawn Panel")]
-        [SerializeField] private GameObject _spawnPanel;
+        [SerializeField] private Button _titleQuitBtn;
 
         private void Start()
         {
-            if (_enterLabBtn)  _enterLabBtn.onClick.AddListener(OnEnterLab);
-            if (_quitBtn)      _quitBtn.onClick.AddListener(OnQuit);
-            if (_backToTitleBtn) _backToTitleBtn.onClick.AddListener(OnBackToTitle);
-            
-            if (_spawnPanel) _spawnPanel.SetActive(true);
+            // Force the overlay to be visible when the game starts
+            if (_titleOverlayPanel) _titleOverlayPanel.SetActive(true);
+
+            if (_enterLabBtn) _enterLabBtn.onClick.AddListener(OnEnterLab);
+            if (_titleQuitBtn) _titleQuitBtn.onClick.AddListener(OnQuit);
         }
 
-        // switches scenes
-        private void OnEnterLab()    => GameController.Instance.Scenes.GoToLab();
-        private void OnBackToTitle() => GameController.Instance.Scenes.GoToTitle();
+        // Hides the overlay to reveal the Lab behind it
+        private void OnEnterLab()
+        {
+            if (_titleOverlayPanel)
+            {
+                _titleOverlayPanel.SetActive(false);
+                Debug.Log("Entered Lab: Title Overlay hidden.");
+            }
+        }
 
         private void OnQuit()
         {
