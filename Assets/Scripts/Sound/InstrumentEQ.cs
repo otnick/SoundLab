@@ -1,4 +1,5 @@
 using UnityEngine;
+using Voxell.Audio;
 
 public class InstrumentEQ : IEffects
 {
@@ -8,9 +9,10 @@ public class InstrumentEQ : IEffects
     AudioLowPassFilter _lowpassFilter;
     AudioHighPassFilter _highpassFilter;
     AudioChorusFilter _chorus;
+    Voxell.Audio.AudioCore _audioCore;
 
     public float scaleCoefficient = 100.0f; // this is used for setting the right cutoff freq
-
+    public float spinCoef = 50.0f;
     public override void Init()
     {
         soundObject = this.gameObject;
@@ -20,6 +22,7 @@ public class InstrumentEQ : IEffects
         _highpassFilter.enabled = false;
         _chorus = soundObject.GetComponent<AudioChorusFilter>();
         _chorus.enabled = true;
+        _audioCore = GetComponent<Voxell.Audio.AudioCore>();
 
 
     }
@@ -38,7 +41,10 @@ public class InstrumentEQ : IEffects
 
     void SetVisuals(float wetness)
     {
-        
+        _audioCore.velocityMultiplier = (wetness/2);
+
+        //_audioCore.idleVelocity.x = spinCoef*Mathf.Pow((Mathf.Clamp(wetness, 0f, 2f))-2, 6);
+        //_audioCore.idleVelocity.y = -spinCoef*Mathf.Pow((Mathf.Clamp(wetness, 0f, 2f))-2, 6);
         return;
     }
 
