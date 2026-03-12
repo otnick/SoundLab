@@ -1,6 +1,7 @@
-using System.Collections;
-using UnityEngine;
 using SoundLab.Tangible;
+using System.Collections;
+//using System.Numerics;
+using UnityEngine;
 
 namespace SoundLab.Environment
 {
@@ -39,7 +40,7 @@ namespace SoundLab.Environment
 
         void Start()
         {
-            ResetTransforms();
+            //ResetTransforms();
             SetNight();
 
             // subscribe to websocket messages from the tangible controller
@@ -132,6 +133,7 @@ namespace SoundLab.Environment
 
                 if (_sunPivot != null)
                     _sunPivot.localPosition = new Vector3(0f, 0f, Mathf.Lerp(_endDistance, _startDistance, EaseInOut(t)));
+           
 
                 UpdateSkybox(1f - t);
                 if (_sunLight != null) _sunLight.intensity = Mathf.Lerp(_maxLightIntensity, 0f, EaseInOut(t));

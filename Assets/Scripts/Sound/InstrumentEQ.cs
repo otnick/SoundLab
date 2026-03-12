@@ -90,7 +90,7 @@ public class InstrumentEQ : IEffects
 
         Debug.Log("ChorusWet = " + chorusWet);
         Debug.Log("wetness = " + wetness);
-        var chorusRate = Remap(chorusWet, 0f, 2f, 10f, 0.5f);
+        var chorusRate = Remap(chorusWet, 0f, 2f, 1f, 0.3f);
         
         Debug.Log("Chors rate: " + chorusRate);
         _chorus.rate = chorusRate;
