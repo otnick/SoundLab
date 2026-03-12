@@ -789,7 +789,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.751
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -799,7 +799,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 0.62
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -18947,7 +18947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a991717e9f9848f68ebb3eae1f8ad92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
-  _clip: {fileID: 8300000, guid: cc8c16fab5ab34a8d974ba57e9098594, type: 3}
+  _clip: {fileID: 8300000, guid: 300c4c5d2496a45a6b86453dfe4b8d2d, type: 3}
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
   _activeColor: {r: 0, g: 1, b: 0.96936965, a: 0.23921569}
   _hapticAmplitude: 0.5
@@ -18976,7 +18976,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.78
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
