@@ -362,11 +362,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36324399}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &38904153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2739100555769473577, guid: 0747df6407b741b4e86ad31ebfd46dd5, type: 3}
-  m_PrefabInstance: {fileID: 4961392638614637230}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &67726201
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
   _clip: {fileID: 8300000, guid: 06e592430cb144a368b1c50c9ecb778f, type: 3}
-  _defaultColor: {r: 1, g: 1, b: 1, a: 0}
+  _defaultColor: {r: 0.44968545, g: 0.7108151, b: 1, a: 0}
   _activeColor: {r: 0, g: 0.4745098, b: 1, a: 0.29803923}
   _hapticAmplitude: 0.5
   _rotationSpeed: 50
@@ -664,13 +659,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67726201}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.044943534, y: -0.25488704, z: 0.16773152, w: -0.9512512}
-  m_LocalPosition: {x: 2.39, y: 2.45, z: -0.48000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.65, y: -0.59, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 530691161}
-  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 340}
+  m_Father: {fileID: 109489575}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &87868946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -766,6 +761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 67726208}
   - {fileID: 1389802778}
   - {fileID: 957625913}
   m_Father: {fileID: 343427665}
@@ -904,6 +900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1543017265}
   - {fileID: 1935179932}
   - {fileID: 777233073}
   m_Father: {fileID: 343427665}
@@ -1369,6 +1366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1109805179}
   - {fileID: 1861779574}
   - {fileID: 1537975524}
   m_Father: {fileID: 343427665}
@@ -6769,10 +6767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071b03a99d43ce4688ce8eb875cecf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.UI.UIController
+  _titleOverlayPanel: {fileID: 0}
   _enterLabBtn: {fileID: 0}
-  _quitBtn: {fileID: 0}
-  _backToTitleBtn: {fileID: 0}
-  _spawnPanel: {fileID: 38904153}
+  _titleQuitBtn: {fileID: 0}
 --- !u!4 &448021480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1479179624109831864, guid: 21052279ece934faa8b22b8ef5ca4c67, type: 3}
@@ -7385,9 +7382,6 @@ Transform:
   - {fileID: 448021480}
   - {fileID: 2101203996}
   - {fileID: 1586034008}
-  - {fileID: 67726208}
-  - {fileID: 1109805179}
-  - {fileID: 1543017265}
   - {fileID: 885648821}
   - {fileID: 1942740130}
   - {fileID: 334283467}
@@ -18231,7 +18225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
   _clip: {fileID: 8300000, guid: 556d3144ccf1b456895bc997c95b472b, type: 3}
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _defaultColor: {r: 0.9685534, g: 0.66093105, b: 0.8481828, a: 1}
   _activeColor: {r: 0.8862745, g: 0, b: 0.6509804, a: 1}
   _hapticAmplitude: 0.5
   _rotationSpeed: 50
@@ -18453,7 +18447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59651f7bf5da64536a7c80df29815277, type: 2}
+  - {fileID: 2100000, guid: 99b2e0e9307ad374797690b095b14068, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18493,13 +18487,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109805172}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.059391256, y: -0.336824, z: 0.16317618, w: -0.9254165}
-  m_LocalPosition: {x: 2.43, y: 1.801, z: 3.05}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.342, z: 2.25}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 530691161}
-  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 340}
+  m_Father: {fileID: 223829773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1153019977
 GameObject:
   m_ObjectHideFlags: 0
@@ -24061,7 +24055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1389802778
 Transform:
   m_ObjectHideFlags: 0
@@ -24190,7 +24184,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389803577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -25519,7 +25513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLab.Sound.SoundTrigger
   _clip: {fileID: 8300000, guid: 300c4c5d2496a45a6b86453dfe4b8d2d, type: 3}
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _defaultColor: {r: 0.48949793, g: 0.69182384, b: 0.65511674, a: 1}
   _activeColor: {r: 0, g: 1, b: 0.96936965, a: 0.23921569}
   _hapticAmplitude: 0.5
   _rotationSpeed: 50
@@ -25741,7 +25735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59651f7bf5da64536a7c80df29815277, type: 2}
+  - {fileID: 2100000, guid: f8772d69b10f5af409ef1c8f919c70d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25781,13 +25775,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543017258}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.044943534, y: -0.25488704, z: 0.16773152, w: -0.9512512}
-  m_LocalPosition: {x: -1.238, y: 2.316, z: 0.37199998}
-  m_LocalScale: {x: 0.4, y: 0.4000001, z: 0.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.07, y: 0.181, z: 0}
+  m_LocalScale: {x: 0.39999998, y: 0.40000007, z: 0.4000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 530691161}
-  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 340}
+  m_Father: {fileID: 129451658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1545893272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26775,7 +26769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1861779574
 Transform:
   m_ObjectHideFlags: 0
@@ -26785,7 +26779,7 @@ Transform:
   m_GameObject: {fileID: 1861779573}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.8, y: 0.53, z: 0}
+  m_LocalPosition: {x: 2.005, y: 0.53, z: -0}
   m_LocalScale: {x: 2.02, y: 2.02, z: 2.02}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -26985,7 +26979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1935179932
 Transform:
   m_ObjectHideFlags: 0

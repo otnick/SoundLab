@@ -41,7 +41,8 @@ public class InstrumentEQ : IEffects
 
     void SetVisuals(float wetness)
     {
-        _audioCore.velocityMultiplier = (wetness/2);
+        _audioCore.velocityMultiplier = (wetness / 2);
+        _audioCore.idleNoiseIntensity = Remap(wetness, 2f, 0f, 0f, 2f);
 
         //_audioCore.idleVelocity.x = spinCoef*Mathf.Pow((Mathf.Clamp(wetness, 0f, 2f))-2, 6);
         //_audioCore.idleVelocity.y = -spinCoef*Mathf.Pow((Mathf.Clamp(wetness, 0f, 2f))-2, 6);

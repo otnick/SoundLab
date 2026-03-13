@@ -1,0 +1,103 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m4426E16860CD20F3D8D620E949606B3D46DDAAE7 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m03611B10A997AB8083E251D6DA4EA43226D6DA5A (void);
+extern void AudioCore_Start_mE3C90D628B1840E3BDD3EDF301412C18CBF749D9 (void);
+extern void AudioCore_Update_m75F5F2DE15676CBD4923026C40868495492DE6BF (void);
+extern void AudioCore_FixedUpdate_mAB5196B49C6793A3A2AA6E6FA87CEB44305D7272 (void);
+extern void AudioCore_InitAgentInteraction_mD4C275DF55A36AF61709E6F708778F30F69FF9F4 (void);
+extern void AudioCore_UpdateAgentInteraction_mEED35CC6268EA5DEA301D9D545DFB41326AB8E88 (void);
+extern void AudioCore_OnMouseDrag_mC2E4B33212FFEDD3B26CEDD3FA6F432F8EE3DAFD (void);
+extern void AudioCore_InitAudioVisualizer_mE61E83B3DA23F85C4AD699EF6AA293853F0AD1E6 (void);
+extern void AudioCore_UpdateAudioVisualizer_m0F6EEA4734185DDEDE26549A279A2BFDBBFD1038 (void);
+extern void AudioCore_OnDisable_mCE0A36A45304DAF6F0F380C1BBB9464E5ED9F54D (void);
+extern void AudioCore__ctor_m66C55DAB60B285E47350A423EE028E5DB7AB8C88 (void);
+extern void ShaderPropertyId__cctor_m89B973616AC07D2C8D0B31883FB78AEDD765FD4F (void);
+extern void ShaderBufferId__cctor_m5F4E892C22C79412E27CDBB0B6EFFFE724171EC1 (void);
+extern void VFXPropertyId__cctor_m6FED02D12ADDC679A2C6A09329C010DB7103310F (void);
+extern void AudioProcessor__ctor_m294228C06C32CFDC42E77390F36089DB5B978E3C (void);
+extern void AudioProcessor_SampleSpectrum_m4ADE345B01783B0A3841F3791F2E1349BB328F42 (void);
+extern void AudioProfile__ctor_mE2F36C9BEFE27716CA7F34B8342329A4B6024E73 (void);
+extern void AudioMeshVisualizer_Execute_m7744E56F61503A5F3267785D9A373E125C126DA6 (void);
+extern void AudioMeshVisualizer_CreateBand_mECB6EB8EB4A220502839276571C02E9A50FAA477 (void);
+static Il2CppMethodPointer s_methodPointers[20] = 
+{
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m4426E16860CD20F3D8D620E949606B3D46DDAAE7,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m03611B10A997AB8083E251D6DA4EA43226D6DA5A,
+	AudioCore_Start_mE3C90D628B1840E3BDD3EDF301412C18CBF749D9,
+	AudioCore_Update_m75F5F2DE15676CBD4923026C40868495492DE6BF,
+	AudioCore_FixedUpdate_mAB5196B49C6793A3A2AA6E6FA87CEB44305D7272,
+	AudioCore_InitAgentInteraction_mD4C275DF55A36AF61709E6F708778F30F69FF9F4,
+	AudioCore_UpdateAgentInteraction_mEED35CC6268EA5DEA301D9D545DFB41326AB8E88,
+	AudioCore_OnMouseDrag_mC2E4B33212FFEDD3B26CEDD3FA6F432F8EE3DAFD,
+	AudioCore_InitAudioVisualizer_mE61E83B3DA23F85C4AD699EF6AA293853F0AD1E6,
+	AudioCore_UpdateAudioVisualizer_m0F6EEA4734185DDEDE26549A279A2BFDBBFD1038,
+	AudioCore_OnDisable_mCE0A36A45304DAF6F0F380C1BBB9464E5ED9F54D,
+	AudioCore__ctor_m66C55DAB60B285E47350A423EE028E5DB7AB8C88,
+	ShaderPropertyId__cctor_m89B973616AC07D2C8D0B31883FB78AEDD765FD4F,
+	ShaderBufferId__cctor_m5F4E892C22C79412E27CDBB0B6EFFFE724171EC1,
+	VFXPropertyId__cctor_m6FED02D12ADDC679A2C6A09329C010DB7103310F,
+	AudioProcessor__ctor_m294228C06C32CFDC42E77390F36089DB5B978E3C,
+	AudioProcessor_SampleSpectrum_m4ADE345B01783B0A3841F3791F2E1349BB328F42,
+	AudioProfile__ctor_mE2F36C9BEFE27716CA7F34B8342329A4B6024E73,
+	AudioMeshVisualizer_Execute_m7744E56F61503A5F3267785D9A373E125C126DA6,
+	AudioMeshVisualizer_CreateBand_mECB6EB8EB4A220502839276571C02E9A50FAA477,
+};
+extern void AudioMeshVisualizer_Execute_m7744E56F61503A5F3267785D9A373E125C126DA6_AdjustorThunk (void);
+extern void AudioMeshVisualizer_CreateBand_mECB6EB8EB4A220502839276571C02E9A50FAA477_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
+{
+	{ 0x06000013, AudioMeshVisualizer_Execute_m7744E56F61503A5F3267785D9A373E125C126DA6_AdjustorThunk },
+	{ 0x06000014, AudioMeshVisualizer_CreateBand_mECB6EB8EB4A220502839276571C02E9A50FAA477_AdjustorThunk },
+};
+static const int32_t s_InvokerIndices[20] = 
+{
+	30011,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	17343,
+	29917,
+	29917,
+	29917,
+	5526,
+	17343,
+	17343,
+	13100,
+	5190,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_VX_Audio_CodeGenModule;
+const Il2CppCodeGenModule g_VX_Audio_CodeGenModule = 
+{
+	"VX.Audio.dll",
+	20,
+	s_methodPointers,
+	2,
+	s_adjustorThunks,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
