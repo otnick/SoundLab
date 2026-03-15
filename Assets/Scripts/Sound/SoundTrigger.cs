@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using SoundLab.Core;
 
 namespace SoundLab.Sound
 {
@@ -38,6 +39,11 @@ namespace SoundLab.Sound
             interactable.selectEntered.AddListener(e => OnActivate(e.interactorObject));
             interactable.selectExited.AddListener(e  => OnDeactivate(e.interactorObject));
         }
+        private void Start()
+        {
+            _isSustained = false;
+            GameController.Instance.Sounds.Add(this);
+        }
 
         private void Update()
         {
@@ -48,11 +54,9 @@ namespace SoundLab.Sound
             }
             else if (_isSustained)
             {
-                if (!IsPrimaryHeld())
-                    StopSound();
-                else
-                    transform.Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
+                transform.Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
             }
+            else if (!_isSustained) StopSound();
         }
 
         private bool IsPrimaryHeld()
@@ -60,9 +64,16 @@ namespace SoundLab.Sound
             return _sustainAction != null && _sustainAction.action.IsPressed();
         }
 
+        public void Sustain(bool sustain)
+        {
+            
+            _isSustained = sustain;
+            Debug.Log("sustain is " + _isSustained);
+        }
+
         private void StopSound()
         {
-            _isSustained = false;
+            //_isSustained = false;
             _audio.Stop();
             if (_material) _material.color = _defaultColor;
         }
@@ -79,7 +90,7 @@ namespace SoundLab.Sound
         private void OnDeactivate(IXRInteractor interactor)
         {
             _activeInteractor = null;
-            _isSustained      = IsPrimaryHeld();
+            //_isSustained      = IsPrimaryHeld();
             if (!_isSustained)
                 StopSound();
         }

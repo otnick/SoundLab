@@ -21,6 +21,16 @@ public class AudioController : MonoBehaviour
         
     }
 
+    public void removeAudioSource(bool pause)
+        {
+            if (pause) audioSource.Pause();
+            else audioSource.Play();
+        }
+    public void addAudioSource()
+    {
+            audioSource.Play();
+    }
+
     public void BendNote(float bendage)
     {
         audioSource.pitch = 1 + bendage;
