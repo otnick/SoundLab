@@ -1,5 +1,6 @@
 using UnityEngine;
 using SoundLab.Core;
+using SoundLab.Sound;
 
 public class PoseController : MonoBehaviour
 {
@@ -15,9 +16,13 @@ public class PoseController : MonoBehaviour
         
     }
 
-    public void PauseInstrument()
+    public void SustainInstrument(bool sustain)
     {
-        GameController.Instance.Instrument.removeAudioSource();
+        GameController.Instance.Instrument.removeAudioSource(sustain);
+        foreach (SoundTrigger sound in GameController.Instance.Sounds)
+        {
+            sound.Sustain(sustain);
+        }
     }
     public void ResumeInstrument()
     {

@@ -19,6 +19,7 @@ namespace SoundLab.Core
         [SerializeField] private TangibleController _tangible;
         [SerializeField] private SpawnController _spawn;
         [SerializeField] private AudioController _instrument;
+        [SerializeField] private List<SoundTrigger> _sounds;
 
         
 
@@ -28,6 +29,7 @@ namespace SoundLab.Core
         public TangibleController Tangible => _tangible;
         public SpawnController Spawn => _spawn;
         public AudioController Instrument => _instrument;
+        public List<SoundTrigger> Sounds => _sounds;
 
         private void Awake()
         {
@@ -43,6 +45,16 @@ namespace SoundLab.Core
 
         private void OnDestroy()
         {
+        }
+
+        public void DebugHands()
+        {
+            Debug.Log("Triggered Fist Pose");
+        }
+        public void DebugHandsEnd()
+        {
+            Debug.Log("Finished fist pose");
+            GameController.Instance.Instrument.enabled = true;
         }
     }
 }
