@@ -207,7 +207,7 @@ namespace SoundLab.Environment
         {
             // Start function WaitAndPrint as a coroutine
             yield return new WaitForSeconds(5.0f);
-             TriggerSunrise();
+            TriggerSunrise();
             StartCoroutine(Sunset());
         }
 
@@ -215,7 +215,7 @@ namespace SoundLab.Environment
         {
 
             // Start function WaitAndPrint as a coroutine
-            yield return new WaitForSeconds(20.0f);
+            yield return new WaitForSeconds(110.0f);
             TriggerSunset();
         }
     }

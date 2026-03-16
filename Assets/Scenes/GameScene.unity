@@ -17829,6 +17829,7 @@ MonoBehaviour:
   _spawn: {fileID: 893132546}
   _instrument: {fileID: 2101203991}
   _sounds: []
+  _sunrise: {fileID: 0}
 --- !u!4 &735335625
 Transform:
   m_ObjectHideFlags: 0
@@ -28193,7 +28194,7 @@ MonoBehaviour:
   _sunLight: {fileID: 168588184}
   _maxLightIntensity: 17000
   _skyboxMaterial: {fileID: 2100000, guid: fab86d6e3aac31b4ba387cf650a655b8, type: 2}
-  _duration: 10
+  _duration: 20
   _startAngle: 0
   _endAngle: -30
   _startDistance: 240
