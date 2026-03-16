@@ -5,7 +5,9 @@ using SoundLab.VR;
 using SoundLab.UI;
 using SoundLab.Tangible;
 using System.Collections.Generic;
+using System.Collections;
 using SoundLab.Sound;
+using SoundLab.Environment;
 
 namespace SoundLab.Core
 {
@@ -21,6 +23,7 @@ namespace SoundLab.Core
         [SerializeField] private SpawnController _spawn;
         [SerializeField] private AudioController _instrument;
         [SerializeField] private List<SoundTrigger> _sounds;
+        [SerializeField] private SunriseController _sunrise;
 
         
 
@@ -31,6 +34,7 @@ namespace SoundLab.Core
         public SpawnController Spawn => _spawn;
         public AudioController Instrument => _instrument;
         public List<SoundTrigger> Sounds => _sounds;
+        public SunriseController Sun => _sunrise;
 
         private void Awake()
         {

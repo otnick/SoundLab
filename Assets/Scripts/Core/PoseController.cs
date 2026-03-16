@@ -4,10 +4,11 @@ using SoundLab.Sound;
 
 public class PoseController : MonoBehaviour
 {
+    public bool sustain;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        sustain = false;
     }
 
     // Update is called once per frame
@@ -16,9 +17,10 @@ public class PoseController : MonoBehaviour
         
     }
 
-    public void SustainInstrument(bool sustain)
+    public void SustainInstrument()
     {
-        GameController.Instance.Instrument.removeAudioSource(sustain);
+        sustain = !sustain;
+        //GameController.Instance.Instrument.removeAudioSource(sustain);
         foreach (SoundTrigger sound in GameController.Instance.Sounds)
         {
             sound.Sustain(sustain);

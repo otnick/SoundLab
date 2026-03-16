@@ -11,10 +11,11 @@ namespace SoundLab.Sound
     public class SoundTrigger : MonoBehaviour
     {
         [SerializeField] private AudioClip _clip;
-        [SerializeField] private Color _defaultColor  = Color.white;
-        [SerializeField] private Color _activeColor   = Color.cyan;
+        [SerializeField] private Color _defaultColor    = Color.white;
+        [SerializeField] private Color _activeColor     = Color.cyan;
         [SerializeField] private float _hapticAmplitude = 0.5f;
         [SerializeField] private float _rotationSpeed   = 180f;
+        [SerializeField] private float _fadeSpeed       = 8f;
         [SerializeField] private InputActionReference _sustainAction;
 
         private AudioSource   _audio;
@@ -23,6 +24,7 @@ namespace SoundLab.Sound
         private IXRInteractor _activeInteractor;
         private IXRInteractor _lastInteractor;
         private bool          _isSustained;
+        private float         _targetVolume;
 
         private void Awake()
         {
@@ -30,10 +32,15 @@ namespace SoundLab.Sound
             _renderer = GetComponentInChildren<Renderer>();
             _material = _renderer ? _renderer.material : null;
 
-            _audio.playOnAwake = false;
-            _audio.loop        = true;
+            _audio.clip = _clip;
 
             if (_material) _material.color = _defaultColor;
+
+            var manager = LoopManager.Instance ?? FindFirstObjectByType<LoopManager>();
+            if (manager != null)
+                manager.Register(_audio);
+            else
+                Debug.LogError("[SoundTrigger] No LoopManager found in scene!", this);
 
             var interactable = GetComponent<XRSimpleInteractable>();
             interactable.selectEntered.AddListener(e => OnActivate(e.interactorObject));
@@ -47,6 +54,8 @@ namespace SoundLab.Sound
 
         private void Update()
         {
+            _audio.volume = Mathf.Lerp(_audio.volume, _targetVolume, Time.deltaTime * _fadeSpeed);
+
             if (_activeInteractor is XRBaseInputInteractor inputInteractor)
             {
                 inputInteractor.SendHapticImpulse(_hapticAmplitude, Time.deltaTime);
@@ -56,35 +65,36 @@ namespace SoundLab.Sound
             {
                 transform.Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
             }
-            else if (!_isSustained) StopSound();
-        }
-
-        private bool IsPrimaryHeld()
-        {
-            return _sustainAction != null && _sustainAction.action.IsPressed();
         }
 
         public void Sustain(bool sustain)
         {
-            
-            _isSustained = sustain;
-            Debug.Log("sustain is " + _isSustained);
+            if (!sustain && _isSustained)
+                Deactivate();
+            else
+                _isSustained = sustain;
         }
 
-        private void StopSound()
-        {
-            //_isSustained = false;
-            _audio.Stop();
-            if (_material) _material.color = _defaultColor;
-        }
 
         private void OnActivate(IXRInteractor interactor)
         {
+            // Mute if already sustained
+            if (_isSustained && _targetVolume > 0)
+            {
+                _targetVolume = 0;
+                if (_material) _material.color = _defaultColor;
+                return;
+            }
+
+            {
+
             _activeInteractor = interactor;
-            _lastInteractor   = interactor;
-            _audio.clip = _clip;
-            _audio.Play();
+            _lastInteractor = interactor;
+            _targetVolume = 1f;
+            _audio.volume = 1f; // set directly as well in case lerp is slow
+
             if (_material) _material.color = _activeColor;
+            }
         }
 
         private void OnDeactivate(IXRInteractor interactor)
@@ -92,7 +102,16 @@ namespace SoundLab.Sound
             _activeInteractor = null;
             //_isSustained      = IsPrimaryHeld();
             if (!_isSustained)
-                StopSound();
+                Deactivate();
         }
+
+        private void Deactivate()
+        {
+            _isSustained  = false;
+            _targetVolume = 0f;
+            _audio.volume = 0f;
+            if (_material) _material.color = _defaultColor;
+        }
+
     }
 }
