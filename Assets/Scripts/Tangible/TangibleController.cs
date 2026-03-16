@@ -174,7 +174,7 @@ namespace SoundLab.Tangible
             string key         = msg.Substring(0, msg.IndexOf(":")).Trim();
             string valueParsed = msg.Substring(msg.IndexOf(":") + 1).Trim();
 
-            if (key == "force_plate1")
+            if (key.Equals("force_plate1")) 
             {
                 float receivedValue = float.Parse(valueParsed);
                 forcePlateMessage(receivedValue);
@@ -191,6 +191,7 @@ namespace SoundLab.Tangible
 
         public void forcePlateMessage(float value)
         {
+            //Debug.Log("miau " + value);
             if (GameController.Instance.Instrument != null)
             GameController.Instance.Instrument.BendNote(value);
         }
