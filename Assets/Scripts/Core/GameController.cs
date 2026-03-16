@@ -44,7 +44,6 @@ namespace SoundLab.Core
 
         private void Start()
         {
-            StartCoroutine(Sunrise());
         }
 
         private void OnDestroy()
@@ -60,23 +59,6 @@ namespace SoundLab.Core
             Debug.Log("Finished fist pose");
             GameController.Instance.Instrument.enabled = true;
         }
-        private IEnumerator Sunrise()
-        {
-            print("Starting " + Time.time);
-
-            // Start function WaitAndPrint as a coroutine
-            yield return new WaitForSeconds(5.0f);
-            Sun.TriggerSunrise();
-            StartCoroutine(Sunset());
-        }
-
-        private IEnumerator Sunset()
-        {
-            print("Starting " + Time.time);
-
-            // Start function WaitAndPrint as a coroutine
-            yield return new WaitForSeconds(20.0f);
-            Sun.TriggerSunset();
-        }
+       
     }
 }
