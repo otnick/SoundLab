@@ -5,11 +5,12 @@
 An interactive VR experience that creatively simulates the functionality of a synthesizer.
 
 ## Design Process
-![Brain storming image](./docs/brainStroming.jpeg)
+![Brain storming image](./docs/img/brainStroming.jpeg)
 The subject was chosen after two meetings using the Crazy Eights design method.
 
 ## System description
-
+### Component Diagram
+![Component Diagram](./docs/img/diagram.svg)
 ### Features
 - Customization of sample sounds, including:
    1. Filtering
@@ -20,5 +21,4 @@ The subject was chosen after two meetings using the Crazy Eights design method.
 
 - Simultaneous playback of multiple sounds
 - using pressure module to recreate sustain pedal effect in piano. 
-
 
