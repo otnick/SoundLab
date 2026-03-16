@@ -38,7 +38,7 @@ We began by brainstorming ideas and pitching them to each other. We then refined
 ### Important
 The operating version of the project is in the branch **main**.
 ```bash
-git checkout sam-at-ek
+git checkout main
 ```
 
 ### Requirements
