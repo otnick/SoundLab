@@ -14,6 +14,7 @@ The project addresses the lack of intuitive tools for musical experimentation in
 The proposed solution provides an engaging interface that gives users the ability to create and manipulate music, making musical exploration more approachable in XR.
 
 ## Design Process
+![Brain storming image](./docs/img/brainStroming.jpeg)
 
 We began by brainstorming ideas and pitching them to each other. We then refined the concepts collaboratively. For interactions and core concepts, we used the "Crazy 8" technique to rapidly sketch and explore possibilities. This helped us identify  directions and prioritize features for development.
 
@@ -22,6 +23,8 @@ We began by brainstorming ideas and pitching them to each other. We then refined
 - **Concept Selection:** Evaluated and discussed sketches to choose the best solutions.
 
 ## System description
+### Component Diagram
+![Component Diagram](./docs/img/diagram.svg)
 
 ### Features
 
