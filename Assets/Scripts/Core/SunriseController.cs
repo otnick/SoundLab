@@ -46,6 +46,7 @@ namespace SoundLab.Environment
             // subscribe to websocket messages from the tangible controller
             if (Core.GameController.Instance?.Tangible != null)
                 Core.GameController.Instance.Tangible.OnMessageReceived += HandleMessage;
+            StartCoroutine(Sunrise());
         }
 
         void OnDestroy()
@@ -202,5 +203,21 @@ namespace SoundLab.Environment
 
         // smooth ease in/out curve
         float EaseInOut(float t) => t * t * (3f - 2f * t);
+        private IEnumerator Sunrise()
+        {
+            // Start function WaitAndPrint as a coroutine
+            yield return new WaitForSeconds(5.0f);
+             TriggerSunrise();
+            StartCoroutine(Sunset());
+        }
+
+        private IEnumerator Sunset()
+        {
+
+            // Start function WaitAndPrint as a coroutine
+            yield return new WaitForSeconds(20.0f);
+            TriggerSunset();
+        }
     }
+   
 }

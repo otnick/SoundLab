@@ -65,37 +65,36 @@ namespace SoundLab.Sound
             {
                 transform.Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
             }
-            else if (!_isSustained) StopSound();
         }
 
         public void Sustain(bool sustain)
         {
-            
-            _isSustained = sustain;
-            Debug.Log("sustain is " + _isSustained);
+            if (!sustain && _isSustained)
+                Deactivate();
+            else
+                _isSustained = sustain;
         }
 
-        private void StopSound()
-        {
-            //_isSustained = false;
-            _audio.Stop();
-            if (_material) _material.color = _defaultColor;
-        }
 
         private void OnActivate(IXRInteractor interactor)
         {
-            _activeInteractor = interactor;
-            _lastInteractor   = interactor;
-            _targetVolume     = 1f;
-            _audio.volume     = 1f; // set directly as well in case lerp is slow
-
-            // Fallback: if audio wasn't scheduled/started, play it now
-            if (!_audio.isPlaying)
+            // Mute if already sustained
+            if (_isSustained && _targetVolume > 0)
             {
-                _audio.Play();
+                _targetVolume = 0;
+                if (_material) _material.color = _defaultColor;
+                return;
             }
 
+            {
+
+            _activeInteractor = interactor;
+            _lastInteractor = interactor;
+            _targetVolume = 1f;
+            _audio.volume = 1f; // set directly as well in case lerp is slow
+
             if (_material) _material.color = _activeColor;
+            }
         }
 
         private void OnDeactivate(IXRInteractor interactor)
@@ -113,5 +112,6 @@ namespace SoundLab.Sound
             _audio.volume = 0f;
             if (_material) _material.color = _defaultColor;
         }
+
     }
 }

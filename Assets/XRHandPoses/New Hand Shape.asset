@@ -16,85 +16,85 @@ MonoBehaviour:
   - m_FingerID: 0
     m_Targets:
     - m_ShapeType: 0
-      m_UpperTolerance: 0.243
-      m_LowerTolerance: 0.142
+      m_UpperTolerance: 0.344
+      m_LowerTolerance: 0.106
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 1
-      m_UpperTolerance: 0.255
+      m_UpperTolerance: 0.334
       m_LowerTolerance: 0.107
       m_Tolerance: 0
       m_Desired: 0.848
     - m_ShapeType: 2
-      m_UpperTolerance: 0.237
+      m_UpperTolerance: 0.321
       m_LowerTolerance: 0.107
       m_Tolerance: 0
       m_Desired: 0.833
   - m_FingerID: 3
     m_Targets:
     - m_ShapeType: 0
-      m_UpperTolerance: 0.316
-      m_LowerTolerance: 0.239
+      m_UpperTolerance: 0.324
+      m_LowerTolerance: 0.096
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 1
-      m_UpperTolerance: 0.311
-      m_LowerTolerance: 0.111
+      m_UpperTolerance: 0.352
+      m_LowerTolerance: 0.108
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 2
-      m_UpperTolerance: 0.418
-      m_LowerTolerance: 0.218
+      m_UpperTolerance: 0.393
+      m_LowerTolerance: 0.079
       m_Tolerance: 0
       m_Desired: 0.8
   - m_FingerID: 2
     m_Targets:
     - m_ShapeType: 0
       m_UpperTolerance: 0.34
-      m_LowerTolerance: 0.269
+      m_LowerTolerance: 0.114
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 1
-      m_UpperTolerance: 0.376
-      m_LowerTolerance: 0.176
+      m_UpperTolerance: 0.341
+      m_LowerTolerance: 0.121
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 2
       m_UpperTolerance: 0.391
-      m_LowerTolerance: 0.191
+      m_LowerTolerance: 0.135
       m_Tolerance: 0
       m_Desired: 0.8
   - m_FingerID: 4
     m_Targets:
     - m_ShapeType: 0
-      m_UpperTolerance: 0.342
-      m_LowerTolerance: 0.274
+      m_UpperTolerance: 0.368
+      m_LowerTolerance: 0.146
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 1
       m_UpperTolerance: 0.4
-      m_LowerTolerance: 0.225
+      m_LowerTolerance: 0.158
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 2
       m_UpperTolerance: 0.435
-      m_LowerTolerance: 0.235
+      m_LowerTolerance: 0.133
       m_Tolerance: 0
       m_Desired: 0.8
   - m_FingerID: 1
     m_Targets:
     - m_ShapeType: 0
-      m_UpperTolerance: 0.38
-      m_LowerTolerance: 0.314
+      m_UpperTolerance: 0.381
+      m_LowerTolerance: 0.174
       m_Tolerance: 0
       m_Desired: 0.8
     - m_ShapeType: 1
       m_UpperTolerance: 0.409
-      m_LowerTolerance: 0.242
+      m_LowerTolerance: 0.175
       m_Tolerance: 0
       m_Desired: 0.846
     - m_ShapeType: 2
-      m_UpperTolerance: 0.398
-      m_LowerTolerance: 0.256
+      m_UpperTolerance: 0.381
+      m_LowerTolerance: 0.186
       m_Tolerance: 0
       m_Desired: 0.864

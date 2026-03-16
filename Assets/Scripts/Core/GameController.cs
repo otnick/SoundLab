@@ -4,7 +4,9 @@ using SoundLab.VR;
 using SoundLab.UI;
 using SoundLab.Tangible;
 using System.Collections.Generic;
+using System.Collections;
 using SoundLab.Sound;
+using SoundLab.Environment;
 
 namespace SoundLab.Core
 {
@@ -20,6 +22,7 @@ namespace SoundLab.Core
         [SerializeField] private SpawnController _spawn;
         [SerializeField] private AudioController _instrument;
         [SerializeField] private List<SoundTrigger> _sounds;
+        [SerializeField] private SunriseController _sunrise;
 
         
 
@@ -30,6 +33,7 @@ namespace SoundLab.Core
         public SpawnController Spawn => _spawn;
         public AudioController Instrument => _instrument;
         public List<SoundTrigger> Sounds => _sounds;
+        public SunriseController Sun => _sunrise;
 
         private void Awake()
         {
@@ -40,7 +44,7 @@ namespace SoundLab.Core
 
         private void Start()
         {
-            
+            StartCoroutine(Sunrise());
         }
 
         private void OnDestroy()
@@ -55,6 +59,24 @@ namespace SoundLab.Core
         {
             Debug.Log("Finished fist pose");
             GameController.Instance.Instrument.enabled = true;
+        }
+        private IEnumerator Sunrise()
+        {
+            print("Starting " + Time.time);
+
+            // Start function WaitAndPrint as a coroutine
+            yield return new WaitForSeconds(5.0f);
+            Sun.TriggerSunrise();
+            StartCoroutine(Sunset());
+        }
+
+        private IEnumerator Sunset()
+        {
+            print("Starting " + Time.time);
+
+            // Start function WaitAndPrint as a coroutine
+            yield return new WaitForSeconds(20.0f);
+            Sun.TriggerSunset();
         }
     }
 }
