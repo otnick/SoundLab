@@ -17,6 +17,7 @@ namespace SoundLab.Sound
         [SerializeField] private float _rotationSpeed   = 180f;
         [SerializeField] private float _fadeSpeed       = 8f;
         [SerializeField] private InputActionReference _sustainAction;
+        [SerializeField] private ParticleSystem _particles;
 
         private AudioSource   _audio;
         private Renderer      _renderer;
@@ -83,6 +84,7 @@ namespace SoundLab.Sound
             {
                 _targetVolume = 0;
                 if (_material) _material.color = _defaultColor;
+                if (_particles) _particles.Stop();
                 return;
             }
 
@@ -94,6 +96,7 @@ namespace SoundLab.Sound
             _audio.volume = 1f; // set directly as well in case lerp is slow
 
             if (_material) _material.color = _activeColor;
+            if (_particles) _particles.Play();
             }
         }
 
@@ -111,6 +114,7 @@ namespace SoundLab.Sound
             _targetVolume = 0f;
             _audio.volume = 0f;
             if (_material) _material.color = _defaultColor;
+            if (_particles) _particles.Stop();
         }
 
     }
