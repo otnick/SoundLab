@@ -1,5 +1,6 @@
 // controlls all other controllers
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using SoundLab.VR;
 using SoundLab.UI;
 using SoundLab.Tangible;
@@ -40,14 +41,22 @@ namespace SoundLab.Core
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        private void Start()
+        private void OnSceneLoaded(Scene _, LoadSceneMode __)
         {
+            _ui = FindObjectOfType<UIController>();
+            _scenes = FindObjectOfType<SceneController>();
+            _vr = FindObjectOfType<VRController>();
+            _tangible = FindObjectOfType<TangibleController>();
+            _spawn = FindObjectOfType<SpawnController>();
+            _instrument = FindObjectOfType<AudioController>();
         }
 
         private void OnDestroy()
         {
+            if (Instance == this) Instance = null;
         }
 
         public void DebugHands()
@@ -59,6 +68,17 @@ namespace SoundLab.Core
             Debug.Log("Finished fist pose");
             GameController.Instance.Instrument.enabled = true;
         }
-       
+
+        public void StartExperience()
+        {
+            _ui.OnEnterLab();
+            _scenes.GoToLab();
+        }
+
+        public void GoToTitle()
+        {
+            _ui.OnExitLab();
+            _scenes.GoToTitle();
+        }
     }
 }
