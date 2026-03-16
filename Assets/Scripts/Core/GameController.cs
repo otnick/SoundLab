@@ -1,5 +1,6 @@
 // controlls all other controllers
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using SoundLab.VR;
 using SoundLab.UI;
 using SoundLab.Tangible;
@@ -36,11 +37,17 @@ namespace SoundLab.Core
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        private void Start()
+        private void OnSceneLoaded(Scene _, LoadSceneMode __)
         {
-            
+            _ui = FindObjectOfType<UIController>();
+            _scenes = FindObjectOfType<SceneController>();
+            _vr = FindObjectOfType<VRController>();
+            _tangible = FindObjectOfType<TangibleController>();
+            _spawn = FindObjectOfType<SpawnController>();
+            _instrument = FindObjectOfType<AudioController>();
         }
 
         private void OnDestroy()
@@ -66,6 +73,7 @@ namespace SoundLab.Core
 
         public void GoToTitle()
         {
+            _ui.OnExitLab();
             _scenes.GoToTitle();
         }
     }
