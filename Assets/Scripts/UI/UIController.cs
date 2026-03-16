@@ -10,8 +10,8 @@ namespace SoundLab.UI
         [SerializeField] private GameObject _titleOverlayPanel;
 
         [Header("Title Buttons")]
-        [SerializeField] private Button _enterLabBtn;
-        [SerializeField] private Button _titleQuitBtn;
+        [SerializeField] public Button _enterLabBtn;
+        [SerializeField] public Button _titleQuitBtn;
 
         private void Start()
         {
@@ -23,7 +23,7 @@ namespace SoundLab.UI
         }
 
         // Hides the overlay to reveal the Lab behind it
-        private void OnEnterLab()
+        public void OnEnterLab()
         {
             if (_titleOverlayPanel)
             {

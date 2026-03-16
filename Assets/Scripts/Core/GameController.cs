@@ -45,6 +45,7 @@ namespace SoundLab.Core
 
         private void OnDestroy()
         {
+            if (Instance == this) Instance = null;
         }
 
         public void DebugHands()
@@ -55,6 +56,17 @@ namespace SoundLab.Core
         {
             Debug.Log("Finished fist pose");
             GameController.Instance.Instrument.enabled = true;
+        }
+
+        public void StartExperience()
+        {
+            _ui.OnEnterLab();
+            _scenes.GoToLab();
+        }
+
+        public void GoToTitle()
+        {
+            _scenes.GoToTitle();
         }
     }
 }
