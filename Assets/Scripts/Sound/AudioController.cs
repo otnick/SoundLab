@@ -9,7 +9,7 @@ namespace SoundLab.Sound{
 
 public class AudioController : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,20 +39,25 @@ public class AudioController : MonoBehaviour
         audioSource.pitch = 1 + bendage;
     }
 
-    private void OnActivate(IXRInteractor interactor)
+    public void OnActivate()
     {
         // Mute if already sustained
         GameController.Instance.AudioToChange.Add(audioSource);
+            Debug.Log("Miau on");
     }
 
-    private void OnDeactivate(IXRInteractor interactor)
+    public void OnDeactivate()
     {
         GameController.Instance.AudioToChange.Remove(audioSource);
+            Debug.Log("miau de");
 
     }
     public void changeTargetVolume(float value)
     {
+           Debug.Log("audiocontrollerObject parent name " + gameObject.name);
+        Debug.Log(audioSource.volume + " changing it audio target: by " + value);
         audioSource.volume = Mathf.Clamp(audioSource.volume + value, 0f, 1f);
+
     }
 }
 }

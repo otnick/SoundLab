@@ -8925,7 +8925,6 @@ Transform:
   - {fileID: 1586034008}
   - {fileID: 885648821}
   - {fileID: 808258495}
-  - {fileID: 692380495}
   - {fileID: 1942740130}
   - {fileID: 334283467}
   - {fileID: 1548697989}
@@ -19340,7 +19339,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 530691161}
+    m_TransformParent: {fileID: 1942740130}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalScale.x
@@ -19356,19 +19355,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19926643
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.4502323
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9999276
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19376,7 +19375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.012042344
+      value: 0.000000043772157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.z
@@ -20033,6 +20032,11 @@ Transform:
   - {fileID: 1115012848}
   m_Father: {fileID: 530691161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &839066269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9150249479564954943, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1444769657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866039156
 GameObject:
   m_ObjectHideFlags: 0
@@ -21151,6 +21155,8 @@ GameObject:
   - component: {fileID: 1069825027}
   - component: {fileID: 1069825028}
   - component: {fileID: 1069825029}
+  - component: {fileID: 1069825030}
+  - component: {fileID: 1069825031}
   m_Layer: 0
   m_Name: HandTrackingController
   m_TagString: Untagged
@@ -21187,7 +21193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Hands.Samples.Gestures::UnityEngine.XR.Hands.Samples.GestureSample.StaticHandGesture
   m_HandTrackingEvents: {fileID: 1370324024}
   m_HandShapeOrPose: {fileID: 11400000, guid: a2ba056f35283544eb4294c352a8a53f, type: 2}
-  m_TargetTransform: {fileID: 1942740130}
+  m_TargetTransform: {fileID: 1400560392}
   m_Background: {fileID: 569010764}
   m_GesturePerformed:
     m_PersistentCalls:
@@ -21206,7 +21212,19 @@ MonoBehaviour:
         m_CallState: 2
   m_GestureEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1069825029}
+        m_TargetAssemblyTypeName: PoseController, Assembly-CSharp
+        m_MethodName: SustainInstrument
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_MinimumHoldTime: 0.2
   m_GestureDetectionInterval: 0.1
   m_StaticGestures: []
@@ -21225,7 +21243,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoseController
   sustain: 0
   volumePoseInit: {x: 0, y: 0, z: 0}
-  handTransform: {fileID: 0}
+  handTransform: {fileID: 839066269}
+  volumeDown: 0
+  volumeUp: 0
+  volumeScaleCoeff: 0.3
+  distanceCoeff: 100000
+--- !u!114 &1069825030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069825026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf93899325d5df74eb9176e097ee3d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Hands.Samples.Gestures::UnityEngine.XR.Hands.Samples.GestureSample.StaticHandGesture
+  m_HandTrackingEvents: {fileID: 1370324024}
+  m_HandShapeOrPose: {fileID: 11400000, guid: dfd944a818929944881ebd9ab39779ac, type: 2}
+  m_TargetTransform: {fileID: 1400560392}
+  m_Background: {fileID: 569010764}
+  m_GesturePerformed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1069825029}
+        m_TargetAssemblyTypeName: PoseController, Assembly-CSharp
+        m_MethodName: VolumeDown
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  m_GestureEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1069825029}
+        m_TargetAssemblyTypeName: PoseController, Assembly-CSharp
+        m_MethodName: VolumeDown
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_MinimumHoldTime: 0.2
+  m_GestureDetectionInterval: 0.1
+  m_StaticGestures: []
+  m_Highlight: {fileID: 0}
+--- !u!114 &1069825031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069825026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf93899325d5df74eb9176e097ee3d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Hands.Samples.Gestures::UnityEngine.XR.Hands.Samples.GestureSample.StaticHandGesture
+  m_HandTrackingEvents: {fileID: 1370324024}
+  m_HandShapeOrPose: {fileID: 11400000, guid: e7b5bfc4e711f9049b4ad03ade500a21, type: 2}
+  m_TargetTransform: {fileID: 1400560392}
+  m_Background: {fileID: 569010764}
+  m_GesturePerformed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1069825029}
+        m_TargetAssemblyTypeName: PoseController, Assembly-CSharp
+        m_MethodName: VolumeUp
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  m_GestureEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1069825029}
+        m_TargetAssemblyTypeName: PoseController, Assembly-CSharp
+        m_MethodName: VolumeUp
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_MinimumHoldTime: 0.2
+  m_GestureDetectionInterval: 0.1
+  m_StaticGestures: []
+  m_Highlight: {fileID: 0}
 --- !u!1 &1098761442
 GameObject:
   m_ObjectHideFlags: 0
@@ -29144,7 +29266,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 692380495}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!1 &1467778604 stripped
@@ -29675,6 +29800,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530691161}
     m_Modifications:
+    - target: {fileID: 148083824764102470, guid: 21052279ece934faa8b22b8ef5ca4c67, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 950360465495536390, guid: 21052279ece934faa8b22b8ef5ca4c67, type: 3}
       propertyPath: m_Volume
       value: 0.302
@@ -30326,9 +30455,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1069825027}
   - {fileID: 803192833}
   - {fileID: 358255788}
+  - {fileID: 1069825027}
   - {fileID: 893132547}
   - {fileID: 771456572}
   m_Father: {fileID: 0}
@@ -32690,8 +32819,8 @@ GameObject:
   - component: {fileID: 2101203982}
   - component: {fileID: 2101203983}
   m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
+  m_Name: Instrument
+  m_TagString: Instrument
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32750,6 +32879,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2101203991}
+        m_TargetAssemblyTypeName: SoundLab.Sound.AudioController, Assembly-CSharp
+        m_MethodName: OnActivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_LastSelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -32757,6 +32898,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InstrumentEQ, Assembly-CSharp
         m_MethodName: setActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2101203991}
+        m_TargetAssemblyTypeName: SoundLab.Sound.AudioController, Assembly-CSharp
+        m_MethodName: OnDeactivate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -33212,6 +33365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a4482cec5c04364831cf8f8035c9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioController
+  audioSource: {fileID: 2101203995}
 --- !u!166 &2101203992
 AudioChorusFilter:
   m_ObjectHideFlags: 0
@@ -33262,7 +33416,7 @@ AudioReverbFilter:
   m_Enabled: 0
   m_DryLevel: 0
   m_Room: -1000
-  m_RoomHF: -454
+  m_RoomHF: -7205
   m_DecayTime: 0.4
   m_DecayHFRatio: 0.83
   m_ReflectionsLevel: -1646
@@ -33284,7 +33438,7 @@ AudioSource:
   m_GameObject: {fileID: 2101203981}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2282884998386517534, guid: f3b9739d4e6804b2c8b83317e68ee6b8, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3335e236644aa41489f1527d7a2854f7, type: 3}
   m_PlayOnAwake: 1

@@ -10,6 +10,7 @@ public class PoseController : MonoBehaviour
     public bool volumeDown;
     public bool volumeUp;
     public float volumeScaleCoeff = 1f;
+    public float distanceCoeff = 60f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +29,7 @@ public class PoseController : MonoBehaviour
 
     void InstrumentUpdate()
     {
+        Debug.Log("Instrument volume update");
         var yOffset = handTransform.localPosition.y - volumePoseInit.y;
         if (volumeUp)
         {
@@ -38,9 +40,9 @@ public class PoseController : MonoBehaviour
                 //Debug.Log("Changing volumePoseInit to " + volumePoseInit.y);
                 return;
             }
-            Debug.Log("would change volume by " + yOffset + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
+            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * distanceCoeff, 0, volumeScaleCoeff * Time.deltaTime) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
             //GameController.Instance.AudioToChange[0].volume += yOffset * 100000;
-            GameController.Instance.Instrument.changeTargetVolume(Mathf.Clamp(yOffset * 1000000, 0f, volumeScaleCoeff * Time.deltaTime));
+            GameController.Instance.Instrument.changeTargetVolume(Mathf.Clamp(yOffset * distanceCoeff, 0, volumeScaleCoeff * Time.deltaTime));
 
         }
         if (volumeDown)
@@ -52,9 +54,9 @@ public class PoseController : MonoBehaviour
                 //Debug.Log("Changing volumePoseInit to " + volumePoseInit.y);
                 return;
             }
-            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * 1000000, -0.1f, 0) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
+            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * distanceCoeff, -volumeScaleCoeff * Time.deltaTime, 0f) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
             //GameController.Instance.AudioToChange[0].volume += yOffset * 10000;
-            GameController.Instance.Instrument.changeTargetVolume(Mathf.Clamp(yOffset * 1000000, 0f, volumeScaleCoeff * Time.deltaTime));
+            GameController.Instance.Instrument.changeTargetVolume(Mathf.Clamp(yOffset * distanceCoeff, -volumeScaleCoeff * Time.deltaTime, 0));
         }
     }
 
@@ -72,9 +74,10 @@ public class PoseController : MonoBehaviour
                 //Debug.Log("Changing volumePoseInit to " + volumePoseInit.y);
                 return;
             }
-            Debug.Log("would change volume by " + yOffset + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
+            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * distanceCoeff, 0, volumeScaleCoeff * Time.deltaTime) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
+            // move total 0.3 shoul be a whole 1
             //GameController.Instance.AudioToChange[0].volume += yOffset * 100000;
-            GameController.Instance.AudioToChange[0].gameObject.GetComponent<SoundTrigger>().changeTargetVolume(Mathf.Clamp(yOffset * 1000000, 0f, volumeScaleCoeff * Time.deltaTime));
+            GameController.Instance.AudioToChange[0].gameObject.GetComponent<SoundTrigger>().changeTargetVolume(Mathf.Clamp(yOffset * distanceCoeff, 0, volumeScaleCoeff * Time.deltaTime));
 
         }
         if (volumeDown)
@@ -86,9 +89,9 @@ public class PoseController : MonoBehaviour
                 //Debug.Log("Changing volumePoseInit to " + volumePoseInit.y);
                 return;
             }
-            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * 1000000, -0.1f, 0) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
+            Debug.Log("would change volume by " + Mathf.Clamp(yOffset * distanceCoeff, -volumeScaleCoeff * Time.deltaTime, 0f) + "On Object " + GameController.Instance.AudioToChange[0].gameObject.name);
             //GameController.Instance.AudioToChange[0].volume += yOffset * 10000;
-            GameController.Instance.AudioToChange[0].gameObject.GetComponent<SoundTrigger>().changeTargetVolume(Mathf.Clamp(yOffset * 1000000,-0.02f,0));
+            GameController.Instance.AudioToChange[0].gameObject.GetComponent<SoundTrigger>().changeTargetVolume(Mathf.Clamp(yOffset * distanceCoeff ,-volumeScaleCoeff * Time.deltaTime,0));
         }
     }
 

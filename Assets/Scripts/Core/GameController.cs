@@ -57,7 +57,7 @@ namespace SoundLab.Core
             _vr = FindObjectOfType<VRController>();
             _tangible = FindObjectOfType<TangibleController>();
             _spawn = FindObjectOfType<SpawnController>();
-            _instrument = FindObjectOfType<AudioController>();
+            _instrument = GameObject.Find("Instrument").GetComponent<AudioController>();
             _pose = FindObjectOfType<PoseController>();
             _pressurePlate = FindObjectOfType<PressurePlateManager>();
 
