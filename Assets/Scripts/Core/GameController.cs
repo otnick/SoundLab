@@ -24,6 +24,7 @@ namespace SoundLab.Core
         [SerializeField] private AudioController _instrument;
         [SerializeField] private List<SoundTrigger> _sounds;
         [SerializeField] private SunriseController _sunrise;
+        [SerializeField] private PoseController _pose;
 
         
 
@@ -35,6 +36,7 @@ namespace SoundLab.Core
         public AudioController Instrument => _instrument;
         public List<SoundTrigger> Sounds => _sounds;
         public SunriseController Sun => _sunrise;
+        public PoseController Pose => _pose;
 
         private void Awake()
         {
@@ -52,21 +54,13 @@ namespace SoundLab.Core
             _tangible = FindObjectOfType<TangibleController>();
             _spawn = FindObjectOfType<SpawnController>();
             _instrument = FindObjectOfType<AudioController>();
+            _pose = FindObjectOfType<PoseController>();
+
         }
 
         private void OnDestroy()
         {
             if (Instance == this) Instance = null;
-        }
-
-        public void DebugHands()
-        {
-            Debug.Log("Triggered Fist Pose");
-        }
-        public void DebugHandsEnd()
-        {
-            Debug.Log("Finished fist pose");
-            GameController.Instance.Instrument.enabled = true;
         }
 
         public void StartExperience()
