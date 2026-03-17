@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using SoundLab.Core;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace SoundLab.Sound{
 
@@ -34,6 +37,22 @@ public class AudioController : MonoBehaviour
     public void BendNote(float bendage)
     {
         audioSource.pitch = 1 + bendage;
+    }
+
+    private void OnActivate(IXRInteractor interactor)
+    {
+        // Mute if already sustained
+        GameController.Instance.AudioToChange.Add(audioSource);
+    }
+
+    private void OnDeactivate(IXRInteractor interactor)
+    {
+        GameController.Instance.AudioToChange.Remove(audioSource);
+
+    }
+    public void changeTargetVolume(float value)
+    {
+        audioSource.volume = Mathf.Clamp(audioSource.volume + value, 0f, 1f);
     }
 }
 }

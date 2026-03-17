@@ -19635,6 +19635,8 @@ MonoBehaviour:
   _sounds: []
   _sunrise: {fileID: 0}
   _pose: {fileID: 0}
+  _pressurePlate: {fileID: 0}
+  _audioToChange: []
 --- !u!4 &735335625
 Transform:
   m_ObjectHideFlags: 0
@@ -21222,6 +21224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoseController
   sustain: 0
+  volumePoseInit: {x: 0, y: 0, z: 0}
+  handTransform: {fileID: 0}
 --- !u!1 &1098761442
 GameObject:
   m_ObjectHideFlags: 0
