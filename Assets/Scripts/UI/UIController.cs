@@ -24,6 +24,11 @@ namespace SoundLab.UI
             if (_exitLabBtn) _exitLabBtn.onClick.AddListener(() => GameController.Instance.GoToTitle());
         }
 
+        private void Awake()
+        {
+            if (_exitLabBtn) _exitLabBtn.onClick.AddListener(() => GameController.Instance.GoToTitle());
+        }
+
         // Hides the overlay to reveal the Lab behind it
         public void OnEnterLab()
         {
