@@ -192,8 +192,9 @@ namespace SoundLab.Tangible
         public void forcePlateMessage(float value)
         {
             //Debug.Log("miau " + value);
-            if (GameController.Instance.Instrument != null)
+            if (GameController.Instance.Instrument == null) return;
             GameController.Instance.Instrument.BendNote(value);
+            GameController.Instance.PressurePlate.setPressurePlateHeight(value);
         }
 
         public void TriggerSunrise()

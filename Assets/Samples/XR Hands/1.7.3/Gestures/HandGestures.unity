@@ -2890,7 +2890,7 @@ PrefabInstance:
     - target: {fileID: 5282402312201483712, guid: 388673baa8d464ef7a9099462735287b, type: 3}
       propertyPath: m_HandShapeOrPose
       value: 
-      objectReference: {fileID: 11400000, guid: a2ba056f35283544eb4294c352a8a53f, type: 2}
+      objectReference: {fileID: 11400000, guid: 118e17b6376411a47b102809989325a9, type: 2}
     - target: {fileID: 5388509237673089170, guid: 388673baa8d464ef7a9099462735287b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

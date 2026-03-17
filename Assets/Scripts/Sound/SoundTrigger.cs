@@ -55,8 +55,9 @@ namespace SoundLab.Sound
 
         private void Update()
         {
+            //if (GameController.Instance.AudioToChange.Count > 0 && _audio.Equals(GameController.Instance.AudioToChange[0])) Debug.Log(gameObject.name + "target Volume = " + _targetVolume);
+           
             _audio.volume = Mathf.Lerp(_audio.volume, _targetVolume, Time.deltaTime * _fadeSpeed);
-
             if (_activeInteractor is XRBaseInputInteractor inputInteractor)
             {
                 inputInteractor.SendHapticImpulse(_hapticAmplitude, Time.deltaTime);
@@ -76,10 +77,16 @@ namespace SoundLab.Sound
                 _isSustained = sustain;
         }
 
+        public void changeTargetVolume(float value)
+        {
+            _targetVolume = Mathf.Clamp(_targetVolume + value, 0f, 1f);
+        }
+
 
         private void OnActivate(IXRInteractor interactor)
         {
             // Mute if already sustained
+            GameController.Instance.AudioToChange.Add(_audio);
             if (_isSustained && _targetVolume > 0)
             {
                 _targetVolume = 0;
@@ -102,6 +109,7 @@ namespace SoundLab.Sound
 
         private void OnDeactivate(IXRInteractor interactor)
         {
+           GameController.Instance.AudioToChange.Remove(_audio);
             _activeInteractor = null;
             //_isSustained      = IsPrimaryHeld();
             if (!_isSustained)

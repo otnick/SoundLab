@@ -1,5 +1,6 @@
 using UnityEngine;
 using Voxell.Audio;
+using SoundLab.Core;
 
 public class InstrumentEQ : IEffects
 {
@@ -96,5 +97,4 @@ public class InstrumentEQ : IEffects
         Debug.Log("Chors rate: " + chorusRate);
         _chorus.rate = chorusRate;
     }
-
 }

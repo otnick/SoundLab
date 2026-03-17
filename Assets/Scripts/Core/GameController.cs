@@ -25,6 +25,8 @@ namespace SoundLab.Core
         [SerializeField] private List<SoundTrigger> _sounds;
         [SerializeField] private SunriseController _sunrise;
         [SerializeField] private PoseController _pose;
+        [SerializeField] private PressurePlateManager _pressurePlate;
+        [SerializeField] private List<AudioSource> _audioToChange;
 
         
 
@@ -37,6 +39,8 @@ namespace SoundLab.Core
         public List<SoundTrigger> Sounds => _sounds;
         public SunriseController Sun => _sunrise;
         public PoseController Pose => _pose;
+        public PressurePlateManager PressurePlate => _pressurePlate;
+        public List<AudioSource> AudioToChange => _audioToChange;
 
         private void Awake()
         {
@@ -55,6 +59,7 @@ namespace SoundLab.Core
             _spawn = FindObjectOfType<SpawnController>();
             _instrument = FindObjectOfType<AudioController>();
             _pose = FindObjectOfType<PoseController>();
+            _pressurePlate = FindObjectOfType<PressurePlateManager>();
 
         }
 

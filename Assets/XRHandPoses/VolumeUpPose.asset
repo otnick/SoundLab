@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 740f51a1ac4b42088297287229057627, type: 3}
-  m_Name: FistPose
+  m_Name: VolumeUpPose
   m_EditorClassIdentifier: Unity.XR.Hands::UnityEngine.XR.Hands.Gestures.XRHandPose
-  m_HandShape: {fileID: 11400000, guid: a2ba056f35283544eb4294c352a8a53f, type: 2}
+  m_HandShape: {fileID: 11400000, guid: 171ad58cd53535648bc67ac34de3c008, type: 2}
   m_RelativeOrientation:
     m_UserConditions:
-    - m_HandAxis: 2
+    - m_HandAxis: 0
       m_AlignmentCondition: 0
       m_ReferenceDirection: 0
-      m_AngleTolerance: 30.4
+      m_AngleTolerance: 60
       m_IgnorePositionY: 1
     m_TargetConditions: []
