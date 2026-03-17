@@ -13,7 +13,8 @@ namespace SoundLab.Sound
         [SerializeField] private AudioClip _clip;
         [SerializeField] private Color _defaultColor    = Color.white;
         [SerializeField] private Color _activeColor     = Color.cyan;
-        [SerializeField] private float _hapticAmplitude = 0.5f;
+        [SerializeField] private float _hapticAmplitude  = 0.5f;
+        [SerializeField] private float _defaultVolume    = 1f;
         [SerializeField] private float _rotationSpeed   = 180f;
         [SerializeField] private float _fadeSpeed       = 8f;
         [SerializeField] private InputActionReference _sustainAction;
@@ -99,8 +100,8 @@ namespace SoundLab.Sound
 
             _activeInteractor = interactor;
             _lastInteractor = interactor;
-            _targetVolume = 1f;
-            _audio.volume = 1f; // set directly as well in case lerp is slow
+            _targetVolume = _defaultVolume;
+            _audio.volume = _defaultVolume;
 
             if (_material) _material.color = _activeColor;
             if (_particles) _particles.Play();
