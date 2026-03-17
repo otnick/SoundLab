@@ -80,7 +80,11 @@ namespace SoundLab.Sound
 
         public void changeTargetVolume(float value)
         {
-            _targetVolume = Mathf.Clamp(_targetVolume + value, 0f, 1f);
+            _targetVolume = value;
+        }
+        public float getTargeVolume()
+        {
+            return _targetVolume;
         }
 
 

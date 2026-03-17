@@ -542,6 +542,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 488194972}
   m_LocalEulerAnglesHint: {x: 0, y: 240, z: 26.57}
+--- !u!1 &35685214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
+  m_PrefabInstance: {fileID: 692380494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &36324399
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +791,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.44968545, g: 0.7108151, b: 1, a: 0}
   _activeColor: {r: 0, g: 0.4745098, b: 1, a: 0.29803923}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 8
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -7761,6 +7767,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.44968545, g: 0.7108151, b: 1, a: 0}
   _activeColor: {r: 0, g: 0.4745098, b: 1, a: 0.29803923}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 2
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -8925,6 +8932,7 @@ Transform:
   - {fileID: 1586034008}
   - {fileID: 885648821}
   - {fileID: 808258495}
+  - {fileID: 692380495}
   - {fileID: 1942740130}
   - {fileID: 334283467}
   - {fileID: 1548697989}
@@ -19339,35 +19347,35 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1942740130}
+    m_TransformParent: {fileID: 530691161}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.36000007
+      value: 0.18000005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.36
+      value: 0.18000005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.36000007
+      value: 0.18000005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.19204164
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: -2.7501452
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9999276
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19375,7 +19383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000043772157
+      value: 0.012042314
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
       propertyPath: m_LocalRotation.z
@@ -19404,13 +19412,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 692380498}
   m_SourcePrefab: {fileID: 100100000, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
 --- !u!4 &692380495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f34b91af5c40a44fbb0ec34c849ce22, type: 3}
   m_PrefabInstance: {fileID: 692380494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &692380498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35685214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa669aa2eed0eec41b9a22eb064a41c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlateManager
 --- !u!1 &709278552
 GameObject:
   m_ObjectHideFlags: 0
@@ -20090,6 +20113,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.48949793, g: 0.69182384, b: 0.65511674, a: 1}
   _activeColor: {r: 0, g: 1, b: 0.96936965, a: 0.23921569}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 2
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -21248,6 +21272,8 @@ MonoBehaviour:
   volumeUp: 0
   volumeScaleCoeff: 0.3
   distanceCoeff: 100000
+  maxDistance: 0.3
+  prevVolume: 0
 --- !u!114 &1069825030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21498,6 +21524,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.9685534, g: 0.66093105, b: 0.8481828, a: 1}
   _activeColor: {r: 0.8862745, g: 0, b: 0.6509804, a: 1}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 8
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -21819,6 +21846,7 @@ MonoBehaviour:
   _defaultColor: {r: 1, g: 0.5411765, b: 0.5058824, a: 1}
   _activeColor: {r: 1, g: 0, b: 0, a: 1}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 2
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -27389,7 +27417,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2101203996}
@@ -28092,7 +28120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2101203996}
@@ -29266,10 +29294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 692380495}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!1 &1467778604 stripped
@@ -29524,6 +29549,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.48949793, g: 0.69182384, b: 0.65511674, a: 1}
   _activeColor: {r: 0, g: 1, b: 0.96936965, a: 0.23921569}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 8
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -31385,6 +31411,7 @@ MonoBehaviour:
   _defaultColor: {r: 1, g: 0.99693936, b: 0.5990566, a: 1}
   _activeColor: {r: 0.9846988, g: 1, b: 0, a: 1}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 8
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -31691,6 +31718,7 @@ MonoBehaviour:
   _defaultColor: {r: 0.9685534, g: 0.66093105, b: 0.8481828, a: 1}
   _activeColor: {r: 0.8862745, g: 0, b: 0.6509804, a: 1}
   _hapticAmplitude: 0.5
+  _defaultVolume: 1
   _rotationSpeed: 50
   _fadeSpeed: 8
   _sustainAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -33448,7 +33476,7 @@ AudioSource:
   Mute: 0
   Spatialize: 1
   SpatializePostEffects: 1
-  Priority: 128
+  Priority: 173
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

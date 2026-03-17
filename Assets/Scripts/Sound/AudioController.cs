@@ -55,9 +55,9 @@ public class AudioController : MonoBehaviour
     public void changeTargetVolume(float value)
     {
            Debug.Log("audiocontrollerObject parent name " + gameObject.name);
-        Debug.Log(audioSource.volume + " changing it audio target: by " + value);
-        audioSource.volume = Mathf.Clamp(audioSource.volume + value, 0f, 1f);
-
+        Debug.Log(audioSource.volume + " changing it audio target: to " + value);
+            //audioSource.volume = Mathf.Clamp(audioSource.volume + value, 0f, 1f);
+            audioSource.volume = value;
     }
 }
 }

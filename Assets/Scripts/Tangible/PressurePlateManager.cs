@@ -18,9 +18,17 @@ public class PressurePlateManager : MonoBehaviour
 
     public void setPressurePlateHeight(float value)
     {
+        if (value < 0)
+        {
+            transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            top,
+            transform.localPosition.z
+            );
+        }
         transform.localPosition = new Vector3(
             transform.localPosition.x,
-            Remap(Mathf.Clamp(value, 0f, 1.3f), 0f, 1.3f, bottom, top),
+            Remap(Mathf.Clamp(value, 0f, 0.7f), 0f, 0.7f, top, bottom),
             transform.localPosition.z
             );
     }
